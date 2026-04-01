@@ -368,7 +368,7 @@ class MarketAnalyzer:
             "| 指数 | 最新 | 涨跌幅 | 成交额(亿) |",
             "|------|------|--------|-----------|"]
         for idx in overview.indices:
-            arrow = "🔴" if idx.change_pct < 0 else "🟢" if idx.change_pct > 0 else "⚪"
+            arrow = "🔴" if idx.change_pct > 0 else "🟢" if idx.change_pct < 0 else "⚪"
             amount_raw = idx.amount or 0.0
             if amount_raw == 0.0:
                 # Yahoo Finance 不提供成交额，显示 N/A 避免误解
